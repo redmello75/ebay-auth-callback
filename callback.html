@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBay OAuth Callback</title>
+</head>
+<body>
+    <h1>Authorization Successful</h1>
+    <p>If you're seeing this page, the OAuth process worked correctly.</p>
+    <script>
+        // Ottiene il parametro di autorizzazione dall'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const authCode = urlParams.get('code');
+        if (authCode) {
+            console.log('Authorization Code:', authCode);
+            // Puoi inviare il codice al tuo backend con una fetch POST
+        } else {
+            console.error('Authorization code not found.');
+        }
+    </script>
+</body>
+</html>
